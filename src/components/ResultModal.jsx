@@ -1,10 +1,10 @@
 import { useImperativeHandle, useRef } from "react";
 import { createPortal } from "react-dom";
 
-function ResultModal({ targetTime, remainingTime, ref, onRestart }) {
+function ResultModal({ targetTime, remainingTime, ref, onRestart, userLost }) {
   const dialogRef = useRef();
 
-  const userLost = remainingTime <= 0;
+  // const userLost = remainingTime <= 0;
   const formattedRemainingTime = (remainingTime / 1000).toFixed(2);
   const score = Math.round((1 - remainingTime / (targetTime * 1000)) * 100);
 
